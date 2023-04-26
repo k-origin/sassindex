@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  height: 123px;
+  width: 100%;
+  background-color: cornflowerblue;
+  margin-bottom: 10px;
+}
+
+.visual {
+  background-color: mediumseagreen;
+  width: 100%;
+  height: 150px;
+  border: 3px solid #000;
+  margin-bottom: 10px;
+}
+
+footer {
+  height: 110px;
+  background-color: burlywood;
+}
+
+@media screen and (min-width: 1025px) {
+  .wrap {
+    margin: 0 auto;
+  }
+  .con01 {
+    border: 3px solid #000;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+  }
+  .con01 div {
+    width: 280px;
+    height: 270px;
+    background-color: tomato;
+    margin: 3px 0;
+  }
+  .con01 .box02 {
+    width: 380px;
+  }
+  .con02 {
+    border: 3px solid #000;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+  }
+  .con02 div {
+    width: 280px;
+    height: 150px;
+    background-color: chocolate;
+    margin: 3px 0;
+  }
+  .con02 .box02 {
+    width: 380px;
+  }
+}
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+  .wrap {
+    margin: 0;
+  }
+  .con01 {
+    border: 3px solid #000;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+  }
+  .con01 div {
+    width: 280px;
+    height: 270px;
+    background-color: darkolivegreen;
+    margin: 3px 0;
+  }
+  .con01 .box02 {
+    width: 380px;
+  }
+  .con02 {
+    border: 3px solid #000;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+  }
+  .con02 div {
+    width: 280px;
+    height: 150px;
+    background-color: #3add8c;
+    margin: 3px 0;
+  }
+  .con02 .box02 {
+    width: 380px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .wrap {
+    margin: 0;
+  }
+  .con01 {
+    border: 3px solid #000;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  .con01 div {
+    width: 100%;
+    height: 270px;
+    background-color: darkolivegreen;
+    margin: 3px 0;
+  }
+  .con02 {
+    border: 3px solid #000;
+    margin-bottom: 10px;
+  }
+  .con02 div {
+    width: 280px;
+    height: 150px;
+    background-color: #3add8c;
+    margin: 3px 0;
+  }
+  .con02 .box02 {
+    width: 380px;
+  }
+}/*# sourceMappingURL=0426.css.map */

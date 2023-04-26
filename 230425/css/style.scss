@@ -1,0 +1,28 @@
+@charset "utf-8";
+
+//변수 생성
+$myFont:'맑은 고딕', arial, sans-serif;
+$baseFontColor: #333;
+$bigFontSize: 30px;
+$baseFontSize: 12px;
+$boxWidth: 1280px;
+$boxCenter: 0px auto;
+$bgColor:#ff0;
+
+body{
+  font-family: $myFont;
+  font-size: $baseFontSize;
+  color: $baseFontColor;
+}
+
+h1{
+  font-size: $bigFontSize;
+}
+
+#wrap{
+  width: $boxWidth;
+  margin: $boxCenter;
+  height: 300px;
+  $bgcolor01:#ccc;
+  background-color: $bgcolor01;
+}

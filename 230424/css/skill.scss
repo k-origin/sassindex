@@ -1,0 +1,55 @@
+@charset "utf-8";
+
+* {
+  margin:0;
+  padding:0;
+}
+
+h2{
+  text-align: center;
+  font-size: 16px;
+  margin: 50px;
+}
+
+ul, li {
+  list-style: none;
+}
+
+ul{
+  width: 500px;
+  margin: 30px auto;
+}
+
+li{
+  display: flex;
+  margin-bottom: 20px;
+}
+
+@mixin base{
+  width: 300px;
+  height: 30px;
+  background-color: #add8e6;
+  position: relative;
+  text-align: right;
+  margin-left: 30px;
+}
+
+@mixin go($w:20%){
+  width: calc( 300px - $w );
+  height: 30px;
+  background-color: #ff7f50;
+  position: absolute;
+  top:0;
+}
+
+.base{
+  @include base;
+}
+
+.go {
+  @include go;
+}
+
+.go1 {
+  @include go(50%);
+}

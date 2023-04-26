@@ -1,0 +1,61 @@
+//import.scss 파일
+
+@import 'style';
+
+h2{
+  font-size: $bigFontSize;
+  color:$baseFontColor;
+  background-color: $bgColor;
+}
+
+@mixin button($backcolor){
+  display: block;
+  width: 300px;
+  height: 50px;
+  line-height: 50px;
+  font-size:$baseFontSize;
+  background-color: $backcolor;
+  color: #111;
+  text-decoration: none;
+  text-align: center;
+  margin: 5px;
+  position: relative;
+  border-radius: 5px;
+}
+
+@mixin img($s, $x:-50px, $y:-50px){
+  background-image: url(../images/sns_icon.png);
+  background-size: $s;
+  background-position: $x $y;
+  width:50px;
+  height: 50px;
+  display:block;
+  position:absolute;
+}
+
+@mixin naver{
+  width: 35px;
+  height: 35px;
+  top: 7px;
+  left: 10px;
+}
+
+.login{
+  @include button(#6af3a8);
+}
+
+.naver{
+  @include button(#48b748);
+  span{
+    @include img(617px, -985px, -85px);
+    @include naver;
+    background-color: #fff;
+  }
+}
+
+.kakao{
+  @include button(#fce51d);
+  span{
+    @include img(560px, -698px, -943px);
+  }
+}

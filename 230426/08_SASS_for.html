@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./css/style3.css" rel="stylesheet" type="text/css">
+  <title>08_SASS_for문</title>
+</head>
+<body>
+  <h2>08_sass함수문법(반복문과 배열)</h2>
+  <h3>1. @for문</h3>
+  <p>- @for 키워드는 스타일을 반복적으로 출력하는데 사용한다</p>
+  <p>- js의 for문과 유사하다.</p>
+
+  <pre>
+    ** 문법 1
+    through : 종료만큼 반복
+    @for $변수 from 시작 through 종료 {
+      //반복할 내용
+    }
+
+    **문법 2
+    //to : 종료 전까지 반복
+    @for $변수 from 시작 to 종료{
+      //반복할 내용
+    }
+  </pre>
+
+  <p>$변수 => #{변수}</p>
+  <p>#{변수}는 코드 어디든지 변수 값을 사용할 수 있다</p>
+  <p>사용 방법:<br>
+    $img: unquote("test01.jpg");<br>
+    h1{background-image:url('./img/#{$img}');}</p>
+
+  
+  <h3>@for문 실습 - through</h3>
+  <p>div 태그가 가로 폭을 50px ~ 250px까지 각각 처리되는 예제</p>
+  <div>박스 1</div>
+  <div>박스 2</div>
+  <div>박스 3</div>
+  <div>박스 4</div>
+  <div>박스 5</div>
+
+  <p>through는 마지막 번째까지 서식 적용, to는 마지막 바로 전까지 서식 적용</p>
+
+  <h3>2. List와 Maps 데이터</h3>
+  <p>List와 Maps는 데이터를 여러 개 나열해서 담는 것을 의미</p>
+  <p>자바스크립트에서 학습한 배열과 객체라고 이해하면 됨</p>
+
+  <h4>1. Lists</h4>
+  <pre>
+    **문법
+    $변수명: 값1, 값2, 값3...;
+    $변수명: (값1, 값2, 값3...);
+    $변수명: 값1 값2 값3;
+  </pre>
+
+  <article>
+    <h2>제목요소</h2>
+    <h2>제목요소</h2>
+    <h2>제목요소</h2>
+  </article>
+
+  <p>2. maps</p>
+  <pre>
+    **문법
+    $변수명:('키명':값, '키명':캆, '키명':값);
+    
+    List와 다르게 괄호를 반드시 써야 한다
+  </pre>
+
+  <section>
+    <h2>제목요소</h2>
+    <h2>제목요소</h2>
+    <h2>제목요소</h2>
+  </section>
+
+  <p>3. while</p>
+  <p>@while도 반복하는 구문</p>
+  <p>잘못된 조건을 작성 시 무한 루프에 빠지기 때문에 권장하지 않음</p>
+
+
+  <pre>
+    @while 조건{
+      //반복할 내용
+    }
+  </pre>
+
+  <ul class="list01">
+    <li>목록1</li>
+    <li>목록2</li>
+    <li>목록3</li>
+  </ul>
+</body>
+</html>

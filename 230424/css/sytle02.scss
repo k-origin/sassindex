@@ -1,0 +1,190 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+$bg_color: #ff0;
+$bg_color02: #f0f;
+$txt_color01: #f00;
+$txt_color02: #00f;
+
+@mixin h3txt {
+  font-family:"Noto Sans KR", "맑은 고딕", Arial, sans-serif;
+  font-size: 30px;
+}
+
+.title01{
+  @include h3txt;
+  background: $bg_color;
+  color: $txt_color01
+}
+
+.title02{
+  @include h3txt;
+  background: $bg_color;
+  color: $txt_color02;
+}
+
+@mixin txt_over{
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.p01{
+  @include txt_over;
+  width: 300px;
+  border: 1px solid #000;
+  background-color: $bg_color;
+}
+
+//버튼 글자
+@mixin btnFont{
+  font-family: "바탕체";
+  font-weight: bold;
+  font-size: 20px;
+}
+
+//버튼 모양
+@mixin btnArea{
+  border: 1px solid #ccc;
+  padding: 5px 30px;
+  border-radius: 20px;
+}
+
+@mixin btn{
+  @include btnFont;
+  @include btnArea;
+}
+
+.btn01{
+  @include btn;
+  background-color: $bg_color;
+}
+
+.btn02{
+  @include btn;
+  background-color: $bg_color02;
+}
+
+$time: 0.5s;
+
+//버튼에 마우스오버 시 적용할 믹스인 함수
+@mixin btn_over{
+  background-color: #000;
+  color:#fff;
+  transition: $time;
+}
+
+.btn01:hover, .btn02:hover{
+  @include btn_over;
+}
+
+//실습예제
+
+@mixin line{
+  display: inline-block;
+  width: 50px;
+  height: 7px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  background-color: #000;
+  transition: $time;
+  position: absolute;
+}
+
+label{
+  display:block;
+  position: relative;
+  width: 50px;
+  height:30px;
+}
+
+input{
+  display: none;
+}
+
+.line01{top: 0px;}
+.line02{top: 15px;}
+.line03{top: 30px;}
+
+@mixin checked{
+  .line01{
+    transform: rotate(45deg) translate(10px, 10px);
+  }
+
+  .line02{
+    display: none;
+  }
+
+  .line03{
+    transform:rotate(-45deg) translate(10px, -10px);
+  }
+}
+
+.line{
+  @include line;
+}
+
+#toggle:checked + label{
+  @include checked;
+}
+
+//4.mixin 함수에 매개변수 삽입하기
+@mixin divBox($bg_color){
+  @include btnFont;
+  background-color: $bg_color;
+}
+
+#box01{
+  @include divBox(#0f0);
+}
+
+#box02{
+  @include divBox(#f0f);
+}
+
+//테이블 테두리 서식
+@mixin border($w:1px, $s:solid, $c:#f00){
+  width: 300px;
+  border: $w $s $c;
+}
+
+//서식 적용 시 필요한 매개변수를 변경하여 넣을 수 있다
+.border{
+  @include border(5px, double);
+}
+
+//테이블 배경과 크기 서식
+@mixin table($t_bg: #f0f0f0){
+  background-color: $t_bg;
+  width: 500px;
+}
+
+@mixin caption($bg:#ff0){
+  background-color: $bg;
+  padding: 10px 0px;
+  font-weight: bold;
+}
+
+table{
+  border-collapse:collapse;
+  @include table;
+}
+
+table caption{
+  @include caption;
+}
+
+table tr td{
+  line-height: 20px;
+  text-align: right;
+  padding-right: 20px;
+}
+
+@mixin odd_tr($bg:#fddc7a){
+  background-color: $bg;
+}
+
+table td:nth-child(2n+1){
+  @include odd_tr;
+}

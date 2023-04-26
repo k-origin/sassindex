@@ -1,0 +1,162 @@
+@charset "utf-8";
+
+//1920-1024 / 999-768 / 767-
+
+*{
+  margin:0;
+  padding:0;
+}
+
+@mixin margin{
+  margin-bottom:10px;
+}
+
+@mixin border{
+  border: 3px solid #000;
+}
+@mixin flex{
+  display: flex;
+  justify-content: space-around;
+}
+
+header{
+  height: 123px;
+  width: 100%;
+  background-color: cornflowerblue;
+  @include margin;
+}
+
+.visual{
+  background-color:mediumseagreen;
+  width: 100%;
+  height: 150px;
+  @include border;
+  @include margin;
+}
+
+
+footer{
+  height: 110px;
+  background-color: burlywood;
+}
+
+$width1: 1025px;
+$width2: 768px;
+$width3: 767px;
+
+@media screen and (min-width:$width1){
+  .wrap{
+    margin: 0 auto;
+  }
+
+  .con01{
+    @include border;
+    @include flex;
+    @include margin;
+    
+    div{
+      width:280px;
+      height: 270px;
+      background-color: tomato;
+      margin: 3px 0;
+    }
+
+    .box02{
+      width: 380px;
+    }
+  }
+
+  .con02{
+    @include border;
+    @include flex;
+    @include margin;
+
+    div {
+      width: 280px;
+      height: 150px;
+      background-color: chocolate;
+      margin: 3px 0;
+    }
+
+    .box02{
+      width: 380px;
+    }
+  }
+}
+
+@media screen and (max-width:$width1 - 1) and (min-width:$width2){
+  .wrap{
+    margin:0;
+  }
+
+  .con01{
+    @include border;
+    @include flex;
+    @include margin;
+    
+    div{
+      width: 280px;
+      height: 270px;
+      background-color:darkolivegreen;
+      margin: 3px 0;
+    }
+
+    .box02{
+      width: 380px;
+    }
+  }
+
+  .con02{
+    @include border;
+    @include flex;
+    @include margin;
+
+    div {
+      width: 280px;
+      height: 150px;
+      background-color: #3add8c;
+      margin: 3px 0;
+    }
+
+    .box02{
+      width: 380px;
+    }
+  }
+}
+
+@media screen and (max-width:$width3){
+  .wrap{
+    margin:0;
+  }
+
+  .con01{
+    @include border;
+    @include margin;
+    width: 100%;
+    
+    div{
+      width:100%;
+      height: 270px;
+      background-color:darkolivegreen;
+      margin: 3px 0;
+    }
+
+
+  }
+
+  .con02{
+    @include border;
+    @include margin;
+
+    div {
+      width: 280px;
+      height: 150px;
+      background-color: #3add8c;
+      margin: 3px 0;
+    }
+
+    .box02{
+      width: 380px;
+    }
+  }
+}

@@ -1,0 +1,45 @@
+@charset "utf-8";
+
+*{
+  margin:0;
+  padding:0;
+}
+
+input{
+  display: none;
+}
+
+label{
+  display: inline-block;
+  width: 100px;
+  height: 50px;
+  text-align: center;
+}
+
+ul{
+  width: 400px;
+  display: none;
+  list-style: none;
+}
+
+ul li img{
+  width: 100%;
+}
+
+
+/* 라디오 버튼이 체크가 되면 동생들 중에서 해당 클래스를 선택 */
+#tab01:checked ~ .t_01 {
+  display: block;
+}
+#tab02:checked ~ .t_02 {
+  display: block;
+}
+#tab03:checked ~ .t_03 {
+  display: block;
+}
+#tab04:checked ~ .t_04 {
+  display: block;
+}
+
+/* 라디오 버튼이 체크가 되면 바로 뒤에 있는 레이블 서식 변경 */
+input[type=radio]:checked + label {background-color: #ff0;}
